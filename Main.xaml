@@ -1,0 +1,81 @@
+﻿<Window x:Class="KidsMathGame.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KidsMathGame"
+        mc:Ignorable="d"
+        Title="Main" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen" >
+    <!-- Background image for game -->
+
+    <Window.Background>
+        <ImageBrush ImageSource="Images/kidsnumbersWall.png" TileMode="Tile"/>
+    </Window.Background>
+
+    <Grid>
+        <!-- Row Definitions -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Top Row Menu holds Quit, Start and Timer -->
+        <Grid Grid.Row="0" Grid.RowSpan="1">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.448"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+        <!-- Middle row holds equation for game and user input -->
+        <Grid Grid.Row="1" Grid.RowSpan="1" Margin="0"/>
+
+        <!-- Control color change idea
+            yellow: #FFF1DC04
+            blue: #FF0396F5
+            red: #FFF4062F
+            green: #FF87C502 -->
+
+        <!-- bottom row holds answer submit button -->
+        <Grid Grid.Row="3">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.838"/>
+                    <GradientStop/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Button x:Name= "FinalScrBtn" Content="Final Scores" Height="40" Width="146" Margin="228,28,230,28" FontFamily="Verdana" FontWeight="Bold" FontSize="20" Background="#FF0396F5" Click="FinalScrBtn_Click">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="PlayGmBtn" Content="Play Game" Width="146" Height="40" Margin="-360,28,0,28" FontFamily="Verdana" FontWeight="Bold" FontSize="20" Background="#FF87C502" Click="PlayGmBtn_Click">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="UserDtaBtn" Content="User Data" Height="40" Width="146" Margin="0,28,-360,28" FontFamily="Verdana" FontWeight="Bold" FontSize="20" Background="#FFF1DC04" Click="UserDtaBtn_Click">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Label Content="Kid's Math Game" Margin="-10,0,0,200" VerticalAlignment="Center" HorizontalAlignment="Center" Background="{x:Null}" FontSize="72" FontFamily="MV Boli" FontWeight="Bold" >
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+                <Label.Foreground>
+                    <ImageBrush ImageSource="Images/gradient-mesh-blurred-background-soft-rainbow.jpg"/>
+                </Label.Foreground>
+            </Label>
+            <Label x:Name="ChooseBtnLbl" Content="" Margin="0,200,0,0" Height="59" Width="400" HorizontalAlignment="Center" FontFamily="Source Code Pro" FontSize="36" Foreground="#FFE7F10F" FontWeight="Bold">
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
+        </Grid>
+    </Grid>
+</Window>

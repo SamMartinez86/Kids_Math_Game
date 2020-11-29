@@ -1,0 +1,82 @@
+﻿<!-- Main Menu windows root of program -->
+<Window x:Class="KidsMathGame.UserData"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KidsMathGame"
+        mc:Ignorable="d"
+        Title="User data" Height="541" Width="328" FontFamily="Verdana"
+        WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+
+    <!-- Background image for main menu-->
+    <Window.Background>
+        <ImageBrush ImageSource="Images/kidsnumbersWall.png"/>
+    </Window.Background> 
+
+    <Grid>
+        <!-- radio buttons for game choices with borders -->
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="50" Margin="80,137,0,0" VerticalAlignment="Top" Width="150" Background="#FFF1DC04">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+            <RadioButton x:Name="AddRadio" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Verdana" FontSize="18" FontWeight="Bold" Margin="9,9,0,0" Checked="AddRadio_Checked" />
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="50" Margin="80,205,0,0" VerticalAlignment="Top" Width="150" Background="#FF0396F5">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+            <RadioButton x:Name="SubRadio" Content="Subtract" FontFamily="Verdana" FontSize="18" FontWeight="Bold" Margin="9,9,23,14" Height="25" Width="116" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="SubRadio_Checked"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="50" Margin="80,275,0,0" VerticalAlignment="Top" Width="150" Background="#FF87C502">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+            <RadioButton x:Name="MultiRadio" Content="Multiply" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Verdana" FontSize="18" FontWeight="Bold" Margin="9,9,0,0" Checked="MultiRadio_Checked"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="50" Margin="80,345,0,0" VerticalAlignment="Top" Width="150" Background="#FFF4062F">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+            <RadioButton x:Name="DivRadio" Content="Divide" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Verdana" FontSize="18" FontWeight="Bold" Margin="11,12,0,0" Checked="DivRadio_Checked"/>
+        </Border>
+        
+        <!-- submit button -->
+        <Button x:Name="MainMenuBtn" Content="Main Menu" HorizontalAlignment="Left" Margin="49,433,0,0" VerticalAlignment="Top" Width="216" Height="67" FontSize="18" FontFamily="Verdana" FontWeight="Bold" Click="MainMenuBtn_Click" BorderThickness="2">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
+        <!-- label, text box and error labels for user submissions -->
+        <Label x:Name="NameLbl" Content="Name:" HorizontalAlignment="Left" Margin="36,18,0,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="16" Height="36" Width="64"/>
+        <Label x:Name="AgeLbl" Content="Age:" HorizontalAlignment="Left" Margin="36,76,0,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="16" Height="36" Width="60"/>
+        <TextBox x:Name="nameTxt" HorizontalAlignment="Left" Height="30" Margin="106,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="170" FontFamily="Verdana" FontSize="16" Background="LightGray">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox x:Name="ageTxt" HorizontalAlignment="Left" Height="28" Margin="106,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="104" FontFamily="Verdana" FontSize="16" Background="LightGray">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <Label x:Name="nameErrLbl" Content="" HorizontalAlignment="Left" Margin="28,52,0,0" VerticalAlignment="Top" Width="268" Foreground="#FFF30A0A" FontFamily="Source Code Pro" FontWeight="Bold">
+            <Label.Effect>
+                <DropShadowEffect Color="#FF810D0D"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="ageErrLbl" Content="" HorizontalAlignment="Left" Margin="28,108,0,0" VerticalAlignment="Top" Width="268" Foreground="#FFF30A0A" FontFamily="Source Code Pro" FontWeight="Bold">
+            <Label.Effect>
+                <DropShadowEffect Color="#FF810D0D"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="radioErrLbl" Content="" HorizontalAlignment="Left" Margin="28,403,0,0" VerticalAlignment="Top" Width="268" Foreground="#FFF30A0A" FontFamily="Source Code Pro" FontWeight="Bold">
+            <Label.Effect>
+                <DropShadowEffect Color="#FF810D0D"/>
+            </Label.Effect>
+        </Label>
+
+
+    </Grid>
+</Window>

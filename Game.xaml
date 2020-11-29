@@ -1,0 +1,91 @@
+﻿<Window x:Class="KidsMathGame.Game"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KidsMathGame"
+        mc:Ignorable="d"
+        Title="Game" Height="381.333" Width="620"
+        WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+
+    <!-- Background image for game -->
+
+    <Window.Background>
+        <ImageBrush ImageSource="Images/kidsnumbersWall.png"/>
+    </Window.Background>
+
+    <Grid>
+        <!-- Row Definitions -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Top Row Menu holds Quit, Start and Timer -->
+        <Grid Grid.Row="0" Grid.RowSpan="1">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.448"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Button x:Name="QuitBtn" Content="Quit to Menu"  Margin="-443,10,0,10" Width="96" Height="35" FontFamily="Verdana" FontWeight="Bold" Background="#FFF4062F" Click="QuitBtn_Click">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="StartBtn" Content="Start" Margin="0,10,0,10"  Height="35" FontFamily="Verdana" FontSize="14" FontWeight="Bold"  Width="96" Background="#FF0396F5" Click="StartBtn_Click">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+        </Grid>
+
+        <!-- Middle row holds equation for game and user input -->
+        <Grid Grid.Row="1" Grid.RowSpan="1" Margin="0">
+            <Label x:Name="outcomeLbl" Content="" Margin="0,10,0,120" Height="59" Width="290" FontFamily="Source Code Pro" FontSize="36" Foreground="#FFF10F0F" FontWeight="Bold">
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
+            <StackPanel Orientation="Horizontal"  Height="75" Margin="140,78,130,35" Background="White">
+                <StackPanel.Effect>
+                    <DropShadowEffect/>
+                </StackPanel.Effect>
+                <Label x:Name="num1Lbl" Content="10" Height="54" Width="85" FontFamily="Verdana" FontSize="36" FontWeight="Bold" Margin="15,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label x:Name="operatorLbl" Content="+" Height="54" Width="46" FontFamily="Verdana" FontSize="36" FontWeight="Bold" Margin="0,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label x:Name="num2Lbl" Content="10" Height="54" Width="68" FontFamily="Verdana" FontSize="36" FontWeight="Bold" Margin="0,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label x:Name="equalsLbl" Content="=" Height="54" Width="47" FontFamily="Verdana" FontSize="36" FontWeight="Bold" Margin="0,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="userTxtBx" Height="54"  TextWrapping="Wrap" Text="" Width="61" FontFamily="Verdana" FontSize="36" FontWeight="Bold" Margin="0,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" PreviewKeyDown="txtInput_PreviewKeyDown"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Control color change idea
+            yellow: #FFF1DC04
+            blue: #FF0396F5
+            red: #FFF4062F
+            green: #FF87C502 -->
+
+        <!-- bottom row holds answer submit button -->
+        <Grid Grid.Row="2">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.5"/>
+                    <GradientStop/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Button x:Name="SubmitBtn" Content="Submit" Height="40" Width="134" Margin="228,28,230,28" FontFamily="Verdana" FontWeight="Bold" FontSize="20" Background="#FF87C502" Click="SubmitBtn_Click">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+        </Grid>
+        <Border BorderBrush="Black" BorderThickness="1" Height="35" Width="130" Margin="435,10,28,10"  Background="White">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+            <Label x:Name="TimerLbl" Content="" FontFamily="Verdana" FontSize="20" Margin="9,-1,9,3"/>
+        </Border>
+    </Grid>
+</Window>
